@@ -3,6 +3,8 @@
 
 Mirror and optionally transform data from one sublevel into another.
 
+[![build status](https://secure.travis-ci.org/juliangruber/level-mirror.png)](http://travis-ci.org/juliangruber/level-mirror)
+
 ## Example
 
 Mirror the posts collection to the `home` sublevel and only include `title`
