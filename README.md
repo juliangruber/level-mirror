@@ -37,6 +37,7 @@ db.sublevel('posts').put(id, {
   if (err) throw err;
 
   db.sublevel('home').get(id, console.log);
+  // null { title: 'A post', slug: 'a-post' }
 });
 ```
 
