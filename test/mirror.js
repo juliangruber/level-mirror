@@ -1,24 +1,16 @@
 var test = require('tape');
 var level = require('level-test')();
 var sub = require('level-sublevel');
-var mirror = require('./');
+var mirror = require('..');
 
-test('mirror and transform', function(t) {
+test('mirror', function(t) {
   t.plan(3);
 
-  var db = sub(level('db', {
+  var db = sub(level('mirror', {
     valueEncoding: 'json'
   }));
 
-  mirror(db.sublevel('posts'), db.sublevel('home'), function(o) {
-    return {
-      key: o.key,
-      value: {
-        title: o.value.title,
-        slug: o.value.slug
-      }
-    };
-  });
+  mirror(db.sublevel('posts'), db.sublevel('home'));
 
   var id = '1337';
   var post = {
@@ -34,7 +26,8 @@ test('mirror and transform', function(t) {
       t.error(err);
       t.deepEqual(_post, {
         title: post.title,
-        slug: post.slug
+        slug: post.slug,
+        text: post.text
       });
     });
   });

@@ -19,15 +19,16 @@ var db = sub(level('db', {
   valueEncoding: 'json'
 }));
 
-mirror(db.sublevel('posts'), db.sublevel('home'), function(o) {
+// pass a function
+mirror(db.sublevel('posts'), db.sublevel('home'), function(post) {
   return {
-    key: o.key,
-    value: {
-      title: o.value.title,
-      slug: o.value.slug
-    }
+    title: post.title,
+    slug: post.slug
   };
 });
+
+// OR an array of properties
+mirror(db.subevel('posts'), db.sublevel('home'), ['title', 'slug']);
 
 var id = '1337';
 
@@ -48,9 +49,12 @@ db.sublevel('posts').put(id, {
 ### mirror(a, b[, transform])
 
 From the point you call `mirror` on, all operations performed on sublevel `a`
-will be mirrored onto sublevel `b`, and optinally transformed on the fly
-through the `transform` function, that receives an object with `{key, value}`
-and is to expected to return the potentially modified version in the same tick.
+will be mirrored onto sublevel `b`, and their values optinally transformed on
+the fly by the `transform` function, that receives the current value and is to
+expected to return the potentially modified value.
+
+`transform` can also be an array, in which case it limits values to the keys
+contained in it.
 
 ## Installation
 

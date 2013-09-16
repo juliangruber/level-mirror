@@ -6,13 +6,10 @@ var db = sub(level('db', {
   valueEncoding: 'json'
 }));
 
-mirror(db.sublevel('posts'), db.sublevel('home'), function(o) {
+mirror(db.sublevel('posts'), db.sublevel('home'), function(post) {
   return {
-    key: o.key,
-    value: {
-      title: o.value.title,
-      slug: o.value.slug
-    }
+    title: post.title,
+    slug: post.slug
   };
 });
 

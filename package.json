@@ -9,7 +9,7 @@
   "homepage": "https://github.com/juliangruber/level-mirror",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test/*.js"
   },
   "dependencies": {},
   "devDependencies": {
