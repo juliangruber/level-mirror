@@ -1,0 +1,31 @@
+{
+  "name": "level-mirror",
+  "description": "Mirror and optionally transform data from one sublevel into another.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/level-mirror.git"
+  },
+  "homepage": "https://github.com/juliangruber/level-mirror",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.1.0",
+    "level-sublevel": "~5.1.1",
+    "level-test": "~1.5.1"
+  },
+  "keywords": [
+    "level",
+    "mirror",
+    "transform"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT"
+}
