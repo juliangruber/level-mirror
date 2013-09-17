@@ -49,9 +49,12 @@ db.sublevel('posts').put(id, {
 ### mirror(a, b[, transform])
 
 From the point you call `mirror` on, all operations performed on sublevel `a`
-will be mirrored onto sublevel `b`, and their values optinally transformed on
-the fly by the `transform` function, that receives the current value and is to
-expected to return the potentially modified value.
+will be mirrored onto sublevel `b`.
+
+If you pass in `transform`, the changes' values will be transformed on
+the fly by the function. It receives the current value and is expected to
+return the potentially modified value. If it returns `undefined`, the change
+will be dropped.
 
 `transform` can also be an array, in which case it limits values to the keys
 contained in it.
