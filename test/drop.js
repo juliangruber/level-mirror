@@ -6,7 +6,7 @@ var mirror = require('..');
 test('drop', function(t) {
   t.plan(2);
 
-  var db = sub(level('mirror', {
+  var db = sub(level('drop', {
     valueEncoding: 'json'
   }));
 
