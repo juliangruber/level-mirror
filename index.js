@@ -14,7 +14,9 @@ function mirror(a, b, transform) {
   a.pre(function(change, add) {
     if (transform && change.type == 'put') {
       change.value = transform(change.value);
-      if (change.value === undefined) return;
+      if (change.value === undefined) {
+        change.type = 'del';
+      };
     }
 
     change.prefix = b;
