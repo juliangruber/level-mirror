@@ -1,7 +1,7 @@
 {
   "name": "level-mirror",
   "description": "Mirror and optionally transform data from one sublevel into another.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/level-mirror.git"
