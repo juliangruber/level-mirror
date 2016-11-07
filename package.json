@@ -13,9 +13,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~1.1.0",
-    "level-sublevel": "~5.1.1",
-    "level-test": "~1.5.1"
+    "tape": "~4.6.2",
+    "level-sublevel": "~6.6.1",
+    "level-test": "~2.0.2"
   },
   "keywords": [
     "level",
